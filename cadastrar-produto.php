@@ -15,10 +15,17 @@ if(isset($_POST['cadastro'])){
         $_POST['preco'],
         $_POST['imagem']
     );
+
+    var_dump($produto); // nao salva a imagem que está como padrão no construtor de Produto
+    exit();
+
+
+    /*
     $produtoRepositorio = new ProdutoRepositorio($pdo);
     $produtoRepositorio->salvar($produto);
 
     header('Location: admin.php');
+    */
 }
 
 
@@ -54,7 +61,7 @@ if(isset($_POST['cadastro'])){
         <img class= "ornaments" src="img/ornaments-coffee.png" alt="ornaments">
     </section>
     <section class="container-form">
-        <form method="post">
+        <form action="#" method="post">
 
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" placeholder="Digite o nome do produto" required>
